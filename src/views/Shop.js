@@ -1,7 +1,7 @@
 //imports at the top
 import axios from "axios";
 import { useState, useContext } from "react";
-import { DataContext } from "../context/DataProvider";
+
 
 
 
@@ -17,9 +17,6 @@ const Shop = () => {
 
    */
    
-    //state variable setup
-    const [drinks, setDrinks] = useState(() => loadDrinkData());
-
    //make api call
    const getDrinkData = async () =>{
         let response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
@@ -34,10 +31,19 @@ const Shop = () => {
         setDrinks(data);
     }
    
-
+    //state variable setup
+    const [drinks, setDrinks] = useState(() => loadDrinkData());
 
     return(
-        <h1>shop</h1>
+        <div className="container">
+        <div className="row">
+           <h1>AMIR'S COCKTAIL AND SALOON</h1>
+        </div>
+        <div className="row">
+           {/* cards for each DRINK once the DRINKs have actually laoded*/}
+           <h1>Stirring up drinks! Please hold...</h1>
+        </div>
+    </div>
     );          
 }
 
