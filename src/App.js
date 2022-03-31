@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Shop from './views/Shop';
 import Gallery from './views/Gallery';
+import Cart from './views/Cart';
 
 const App = () => {
    
@@ -16,6 +17,7 @@ const App = () => {
        <Route children path='/' element={<Home />} />
        <Route children path='/Shop' element={<Shop />} />
        <Route children path='/Gallery' element={<Gallery />} />
+       <Route children path='/Cart' element = {<Cart />} />
      </Routes>
    </div>
    );

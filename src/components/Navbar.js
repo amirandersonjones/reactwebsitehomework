@@ -7,7 +7,7 @@ const Navbar = props => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="#">AMIR'S SHOP</a>
+  <a className="navbar-brand" href="#">AMIR'S COCKTAIL AND SALOON</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -16,6 +16,7 @@ const Navbar = props => {
       <Link className="nav-item nav-link active" to="/">Home <span className="sr-only">(current)</span></Link>
       <Link className="nav-item nav-link" to="/Shop">Shop</Link>
       <Link className="nav-item nav-link" to="/Gallery">Gallery</Link>
+      <Link className="nav-item nav-link" to="/Cart">Cart</Link>
       <Link className="nav-item nav-link disabled" to="#">Disabled</Link>
     </div>
   </div>
