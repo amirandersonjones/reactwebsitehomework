@@ -50,7 +50,7 @@ const decreaseQuantity = idDrink => {
     mutableCart.drinks[idDrink].quantity-- :
     delete mutableCart.drinks[idDrink]
     // set the db right before we set the new state!
-    console.log(mutableCart)
+    // console.log(mutableCart)
     setCart(mutableCart)
 }
 const removeItem = idDrink => {
@@ -76,10 +76,10 @@ return (
                 </div>
                 {Object.values(cart.drinks).map((drink, index) => {
                     return <div key={index} className="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div className="mr-1"><img className="rounded" alt="" src={drink.strDrinkThumb} width="70" /></div>
+                        <div className="mr-1"><img className="rounded" alt="" src={drink.data.strDrinkThumb} width="70" /></div>
                         <div className="d-flex flex-column align-items-center product-details"><span className="font-weight-bold">{drink.strDrink}</span>
                             <div className="d-flex flex-row product-desc">
-                                <div className="size mr-1"><span className="font-weight-bold">Thanks for choosing this cocktail</span></div>
+                                <div className="size mr-1"><span className="font-weight-bold">{drink.data.strDrink}</span></div>
                             </div>
                         </div>
                         <div className="d-flex flex-row align-items-center qty">

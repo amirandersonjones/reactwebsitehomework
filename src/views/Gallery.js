@@ -5,7 +5,7 @@
 //function definition for my component-return a single JSX element
 const Gallery = props => {
     return(
-        <h1>gallery</h1>
+        <h1>Gallery</h1>
     );          
 }
 

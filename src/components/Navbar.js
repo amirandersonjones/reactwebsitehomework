@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { DataContext } from '../context/DataProvider';
 
 //function definition for my component-return a single JSX element
 const Navbar = props => {
-    useEffect (() => {console.log('Navbar component redered or re-rendered!')});
+  const {cart} = useContext(DataContext);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,6 +19,12 @@ const Navbar = props => {
       <Link className="nav-item nav-link" to="/Gallery">Gallery</Link>
       <Link className="nav-item nav-link" to="/Cart">Cart</Link>
       <Link className="nav-item nav-link disabled" to="#">Disabled</Link>
+      <li className="nav-item active">
+        {cart.size === 0 ?
+        <Link className="btn btn-info" to="/shop"><i className="fa fa-shopping-cart"></i></Link> :
+        <Link className="btn btn-info" to="/cart"><i className="fa fa-shopping-cart mr-1"></i>{cart.size} | ${cart.total.toFixed(2)}</Link>
+        }
+      </li>
     </div>
   </div>
 </nav>
