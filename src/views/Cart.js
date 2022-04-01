@@ -11,12 +11,19 @@ const Cart = () => {
     4. Remove one of an item
     5. Remove all of a single item from my cart
     */
-const { cart, setCart } = useContext(DataContext);
-//this function doesnt need input
-const clearCart = () => {
-    setCart({size: 0, total: 0, drinks: {}}); //on click button down low
-    // console.log(cart);
-}
+    const { cart, setCart } = useContext(DataContext);
+    // access our db from the db provider thru the useDatabase hook
+    const db = useDatabase();
+    // access our user
+    const { data: user } = useUser();
+
+    const clearCart = () => {
+        if (user){
+            set(ref(db, 'carts/' + user.uid), null);
+        }
+        setCart({size: 0, total: 0, drinks: {}});
+    }
+
 
 //increase quantity does need input.we also have to modify the cart so we have to mutate the cart
 const increaseQuantity = idDrink => {
